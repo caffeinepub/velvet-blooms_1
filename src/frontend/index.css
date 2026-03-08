@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   Velvet Blooms — Cozy Premium Design System
+   Palette: Warm Cream, Blush Pink, Sage Green
+   ========================================================= */
+
+/* Velvet Blooms uses Georgia-based serif stack for headings
+   and system sans-serif for body — no external fonts needed */
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ── Core Palette ─────────────────────────── */
+    /* Warm Cream — background / canvas */
+    --background: 0.974 0.012 78;
+
+    /* Deep Mahogany — foreground text */
+    --foreground: 0.22 0.035 30;
+
+    /* Card / Popover surface */
+    --card: 0.985 0.008 70;
+    --card-foreground: 0.22 0.035 30;
+    --popover: 0.985 0.008 70;
+    --popover-foreground: 0.22 0.035 30;
+
+    /* Blush Pink — primary CTA */
+    --primary: 0.72 0.12 10;
+    --primary-foreground: 0.99 0.005 20;
+
+    /* Sage Green — secondary */
+    --secondary: 0.88 0.04 145;
+    --secondary-foreground: 0.22 0.035 140;
+
+    /* Muted surfaces */
+    --muted: 0.96 0.018 75;
+    --muted-foreground: 0.52 0.04 55;
+
+    /* Accent — richer sage */
+    --accent: 0.78 0.06 145;
+    --accent-foreground: 0.22 0.035 140;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders + Inputs */
+    --border: 0.89 0.02 75;
+    --input: 0.89 0.02 75;
+    --ring: 0.72 0.12 10;
+
+    /* Chart colours */
+    --chart-1: 0.72 0.12 10;
+    --chart-2: 0.72 0.08 145;
+    --chart-3: 0.82 0.1 80;
+    --chart-4: 0.65 0.15 25;
+    --chart-5: 0.78 0.06 145;
+
+    /* Sidebar */
+    --sidebar: 0.96 0.018 75;
+    --sidebar-foreground: 0.22 0.035 30;
+    --sidebar-primary: 0.72 0.12 10;
+    --sidebar-primary-foreground: 0.99 0.005 20;
+    --sidebar-accent: 0.88 0.04 145;
+    --sidebar-accent-foreground: 0.22 0.035 140;
+    --sidebar-border: 0.89 0.02 75;
+    --sidebar-ring: 0.72 0.12 10;
+
+    /* Custom brand tokens */
+    --blush: 0.72 0.12 10;
+    --blush-light: 0.92 0.05 10;
+    --sage: 0.72 0.08 145;
+    --sage-light: 0.92 0.04 145;
+    --cream: 0.974 0.012 78;
+    --cream-dark: 0.94 0.025 75;
+    --mahogany: 0.22 0.035 30;
+  }
+
+  .dark {
+    --background: 0.16 0.02 30;
+    --foreground: 0.96 0.01 75;
+    --card: 0.22 0.025 30;
+    --card-foreground: 0.96 0.01 75;
+    --popover: 0.28 0.025 30;
+    --popover-foreground: 0.96 0.01 75;
+    --primary: 0.78 0.1 10;
+    --primary-foreground: 0.12 0.02 30;
+    --secondary: 0.35 0.05 145;
+    --secondary-foreground: 0.92 0.04 145;
+    --muted: 0.28 0.025 30;
+    --muted-foreground: 0.65 0.04 55;
+    --accent: 0.42 0.06 145;
+    --accent-foreground: 0.92 0.04 145;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.72 0.1 10;
+    --chart-1: 0.78 0.1 10;
+    --chart-2: 0.72 0.08 145;
+    --chart-3: 0.82 0.1 80;
+    --chart-4: 0.65 0.15 25;
+    --chart-5: 0.78 0.06 145;
+    --sidebar: 0.22 0.025 30;
+    --sidebar-foreground: 0.96 0.01 75;
+    --sidebar-primary: 0.78 0.1 10;
+    --sidebar-primary-foreground: 0.12 0.02 30;
+    --sidebar-accent: 0.35 0.05 145;
+    --sidebar-accent-foreground: 0.92 0.04 145;
+    --sidebar-border: 1 0 0 / 12%;
+    --sidebar-ring: 0.72 0.1 10;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .font-serif-accent {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .font-body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+
+  /* Petal texture overlay */
+  .texture-petal {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, oklch(var(--blush-light) / 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(var(--sage-light) / 0.25) 0%, transparent 55%);
+  }
+
+  /* Warm gradient mesh for hero */
+  .bg-hero-mesh {
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 40%, oklch(var(--blush-light) / 0.5) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 80% at 75% 65%, oklch(var(--sage-light) / 0.35) 0%, transparent 60%),
+      oklch(var(--cream));
+  }
+
+  /* Soft card glow */
+  .card-bloom {
+    box-shadow:
+      0 2px 8px oklch(var(--blush) / 0.08),
+      0 8px 24px oklch(var(--mahogany) / 0.07);
+  }
+
+  .card-bloom-hover {
+    box-shadow:
+      0 4px 16px oklch(var(--blush) / 0.18),
+      0 16px 40px oklch(var(--mahogany) / 0.12);
+  }
+
+  /* Petal divider */
+  .divider-petal {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .divider-petal::before,
+  .divider-petal::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(var(--blush) / 0.4),
+      transparent
+    );
+  }
+}
